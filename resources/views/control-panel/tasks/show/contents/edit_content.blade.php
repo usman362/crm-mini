@@ -1,0 +1,21 @@
+@extends('layouts.form')
+
+@section('title')
+  Edit Content Detail
+@endsection
+
+@section('action')
+  {{ route('task.content-detail.update',$content->id) }}
+@endsection
+
+@section('input-fields')
+  @include('control-panel.content_details.partials.input-fields', [
+      'content' => $content,
+      'products' => $products,
+      'tasks' => null,
+  ])
+@endsection
+
+@section('submit-button')
+  <x-buttons.submit content="Update" color="success" />
+@endsection
